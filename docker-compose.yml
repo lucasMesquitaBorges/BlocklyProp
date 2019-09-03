@@ -1,0 +1,20 @@
+version: '2'
+volumes:
+  mysql-data:
+    driver: local
+services:
+  tomcat:
+    image: tomcat:8.0
+    container_name: tomcat-server
+    ports:
+     - "8888:8080"
+  mysql:
+    image: mysql:5.6
+    container_name: mysql
+    ports:
+     - "3306:3306"
+    environment:
+     - MYSQL_ROOT_PASSWORD=blocklyprop
+     - MYSQL_DATABASE=blocklyprop
+     - MYSQL_USER=blocklyprop
+     - MYSQL_PASSWORD=blocklyprop
